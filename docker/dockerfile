@@ -1,0 +1,8 @@
+FROM frolvlad/alpine-oraclejdk8:slim
+VOLUME /tmp
+ADD app.jar app.jar
+ENV SPRING_APPLICATION_NAME="hello-world-ci-final"
+ENV JAVA_OPTS="-Xmx128m -Xms128m"
+EXPOSE 8080
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+ENTRYPOINT [ "sh", "-c", "java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /app.jar --spring.application.name=${SPRING_APPLICATION_NAME} " ]
