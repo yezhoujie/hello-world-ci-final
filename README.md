@@ -227,4 +227,10 @@ before_script:
 
 ```
 
+## 可优化
+
+auto_devops 脚本可以用curl + token 方式从后台下载，避免一些敏感信息泄露
+
 [baseci 参考：https://github.com/yezhoujie/java-docker-helm-baseci](https://github.com/yezhoujie/java-docker-helm-baseci)
+
+[gitlab-runner 配置 参考： https://github.com/yezhoujie/gitlab-runner-kubernetes](https://github.com/yezhoujie/gitlab-runner-kubernetes)
